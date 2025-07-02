@@ -8,20 +8,17 @@ An Arduino board continuously collects environmental data using sensors for temp
 The system follows a multi-step logic:
 
 **1.Data Collection**
+
 Sensors gather live readings of temperature, humidity, smoke levels, and flame intensity. A temperature history is maintained to detect sudden spikes.
 
 **2.Fire Risk Evaluation**
 The Python program receives this data and feeds it into a trained machine learning model (Random Forest). The model uses five inputs:
 
-Current temperature
-
-Humidity
-
-Smoke level
-
-Presence of flame
-
-Temperature spike based on historical average
+a)Current temperature
+b)Humidity
+c)Smoke level
+d)Presence of flame
+e)Temperature spike based on historical average
 
 Based on this input, the model outputs either 0 (safe) or 1 (fire risk).
 
